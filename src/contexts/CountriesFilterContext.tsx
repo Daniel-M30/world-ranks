@@ -21,9 +21,9 @@ type CountriesFilterContextData = {
 export const CountriesFilterContext = createContext({} as CountriesFilterContextData);
 
 export function CountriesFilterProvider({ children }: CountriesFilterProviderProps) {
-  const [sortBy, setSortBy] = useState<SortByData>("population");
-  const [regions, setRegions] = useState<RegionData[]>([]);
-  const [status, setStatus] = useState<StatusData[]>([]);
+  const [sortBy] = useState<SortByData>("population");
+  const [regions] = useState<RegionData[]>([]);
+  const [status] = useState<StatusData[]>([]);
 
   return (
     <CountriesFilterContext.Provider value={{ filter: { sortBy, status, regions } }}>
