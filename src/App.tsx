@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Home } from "./pages/Home";
+import { CountriesList } from "./pages/CountriesList";
 import { BrowserRouter, Routes, Route } from "react-router";
-import { Country } from "./pages/Country";
+import { CountryInfo } from "./pages/CountryInfo";
 
 export function App() {
   const queryCliente = new QueryClient();
@@ -10,9 +10,9 @@ export function App() {
     <QueryClientProvider client={queryCliente}>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Home />} />
-          <Route element={<Country />} path="/country/:countryId" />
-          <Route element={<Home />} path="*" />
+          <Route index element={<CountriesList />} />
+          <Route element={<CountryInfo />} path="/country/:countryId" />
+          <Route element={<CountriesList />} path="*" />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
